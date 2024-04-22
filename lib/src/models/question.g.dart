@@ -19,6 +19,8 @@ Question _$QuestionFromJson(Map<String, dynamic> json) => Question(
       isMandatory: json['is_mandatory'] as bool? ?? false,
       errorText: json['error_text'] as String?,
       properties: json['properties'] as Map<String, dynamic>?,
+      isScale: json['is_scale'] as bool? ?? false,
+      isTitle: json['is_title'] as bool? ?? false,
       answers:
           (json['answers'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
@@ -31,5 +33,7 @@ Map<String, dynamic> _$QuestionToJson(Question instance) => <String, dynamic>{
       'is_mandatory': instance.isMandatory,
       'error_text': instance.errorText,
       'properties': instance.properties,
+      'is_scale': instance.isScale,
+      'is_title': instance.isTitle,
       'answers': instance.answers,
     };

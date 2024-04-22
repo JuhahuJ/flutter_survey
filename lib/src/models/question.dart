@@ -23,6 +23,10 @@ class Question extends Equatable {
   ///Custom properties for every question/field.
   final Map<String, dynamic>? properties;
 
+  final bool isScale;
+
+  final bool isTitle;
+
   ///The list of answers selected by the user.
   late final List<String> answers;
 
@@ -33,6 +37,8 @@ class Question extends Equatable {
       this.isMandatory = false,
       this.errorText,
       this.properties,
+      this.isScale = false,
+      this.isTitle = false,
       List<String>? answers})
       : answers = answers ?? [],
         answerChoices = answerChoices ?? {},
@@ -46,5 +52,5 @@ class Question extends Equatable {
 
   @override
   List<Object?> get props =>
-      [question, singleChoice, answerChoices, isMandatory];
+      [question, singleChoice, answerChoices, isMandatory, isScale, isTitle];
 }
